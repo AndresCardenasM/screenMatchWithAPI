@@ -1,7 +1,10 @@
 package com.aluracursos.screenmatch.Main;
 
+import com.aluracursos.screenmatch.models.OMDbTitle;
 import com.aluracursos.screenmatch.models.Title;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -28,8 +31,20 @@ public class MainWSearch {
         String json = response.body();
         System.out.println(json);
 
-        Gson gson = new Gson();
-        Title miTitle = gson.fromJson(json, Title.class);
-        System.out.println(miTitle);
+        Gson gson = new GsonBuilder().
+                setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE) // Permite recibir mays incluso cuando la clase esta en mins
+                .create();
+        OMDbTitle omDbTitle = gson.fromJson(json, OMDbTitle.class);
+        System.out.println(omDbTitle);
+        try { // Evita que se rompa el programa teniendo en cuenta el error en runtime
+            Title miTitle = new Title(omDbTitle);
+            System.out.println(miTitle);
+        }catch (NumberFormatException e){
+            System.out.println("Error: ");
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Programa finalizado.");
+
+
     }
 }
