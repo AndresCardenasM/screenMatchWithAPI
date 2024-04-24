@@ -1,6 +1,6 @@
 package com.aluracursos.screenmatch.models;
 
-import com.aluracursos.screenmatch.exception.conversionErrorinRuntimeExection;
+import com.aluracursos.screenmatch.exception.conversionErrorinRuntimeException;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title> {
@@ -23,7 +23,7 @@ public class Title implements Comparable<Title> {
         this.name = myOmDbTitle.title();
         this.releaseDate = Integer.valueOf(myOmDbTitle.year());
         if (myOmDbTitle.runtime().contains("N/A")){
-            throw new conversionErrorinRuntimeExeption("No hay informacion de la duracion de esta pelicula");
+            throw new conversionErrorinRuntimeException ("No hay informacion de la duracion de esta pelicula");
         }
         this.durationInMinutes = Integer.valueOf(myOmDbTitle.runtime().
                 substring(0,3).replace(" ", ""));

@@ -1,11 +1,13 @@
 package com.aluracursos.screenmatch.Main;
 
+import com.aluracursos.screenmatch.exception.conversionErrorinRuntimeException;
 import com.aluracursos.screenmatch.models.OMDbTitle;
 import com.aluracursos.screenmatch.models.Title;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FilterWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -39,11 +41,17 @@ public class MainWSearch {
 
             Title miTitle = new Title(omDbTitle);
             System.out.println("Titulo ya convertido: " + miTitle);
+
+            FilterWriter writer = new FilterWriter("") {
+
+            }
         }catch (NumberFormatException e){
             System.out.println("Error: ");
             System.out.println(e.getMessage());
         }catch (IllegalArgumentException e){
             System.out.println("Error en la URI, verifique la direccion");
+        }catch (conversionErrorinRuntimeException e){
+            System.out.println(e.getMessage());
         }
         System.out.println("Programa finalizado.");
 
