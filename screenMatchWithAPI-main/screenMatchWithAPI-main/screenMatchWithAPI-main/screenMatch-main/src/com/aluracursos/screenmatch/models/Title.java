@@ -4,9 +4,7 @@ import com.aluracursos.screenmatch.exception.conversionErrorinRuntimeException;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title> {
-    @SerializedName("Title")
     private String name;
-    @SerializedName("Year")
     private int releaseDate;
     private int durationInMinutes;
 
@@ -85,8 +83,8 @@ public class Title implements Comparable<Title> {
 
     @Override
     public String toString() {
-        return "Name= " + name + '\'' +
+        return "(Name= " + name +
                 ", Released= " + releaseDate +
-                ", Runtime= " + durationInMinutes;
+                ", Runtime= " + durationInMinutes + ")";
     }
 }
