@@ -1,0 +1,34 @@
+[
+  {
+    "Name": "Up",
+    "ReleaseDate": 2009,
+    "DurationInMinutes": 96,
+    "IncludedInThePlan": false,
+    "EvaluationsSum": 0.0,
+    "EvaluationsTotal": 0
+  },
+  {
+    "Name": "Matrix",
+    "ReleaseDate": 1993,
+    "DurationInMinutes": 60,
+    "IncludedInThePlan": false,
+    "EvaluationsSum": 0.0,
+    "EvaluationsTotal": 0
+  },
+  {
+    "Name": "Bee Movie",
+    "ReleaseDate": 2007,
+    "DurationInMinutes": 91,
+    "IncludedInThePlan": false,
+    "EvaluationsSum": 0.0,
+    "EvaluationsTotal": 0
+  },
+  {
+    "Name": "Brave",
+    "ReleaseDate": 2012,
+    "DurationInMinutes": 93,
+    "IncludedInThePlan": false,
+    "EvaluationsSum": 0.0,
+    "EvaluationsTotal": 0
+  }
+]
